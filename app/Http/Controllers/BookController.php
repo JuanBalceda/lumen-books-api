@@ -26,10 +26,9 @@ class BookController extends Controller
 
     /**
      * Return book list
-     * @param Request $request
      * @return JsonResponse
      */
-    public function index(Request $request)
+    public function index()
     {
         $books = Book::all();
 
@@ -98,7 +97,7 @@ class BookController extends Controller
 
         $book->save();
 
-        return $this->successResponse($book, Response::HTTP_CREATED);
+        return $this->successResponse($book);
     }
 
     /**
